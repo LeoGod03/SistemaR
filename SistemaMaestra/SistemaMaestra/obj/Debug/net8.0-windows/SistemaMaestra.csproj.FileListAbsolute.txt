@@ -1,0 +1,17 @@
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\bin\Debug\net8.0-windows\SistemaMaestra.exe
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\bin\Debug\net8.0-windows\SistemaMaestra.deps.json
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\bin\Debug\net8.0-windows\SistemaMaestra.runtimeconfig.json
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\bin\Debug\net8.0-windows\SistemaMaestra.dll
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\bin\Debug\net8.0-windows\SistemaMaestra.pdb
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.csproj.GenerateResource.cache
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.AssemblyInfoInputs.cache
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.AssemblyInfo.cs
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.csproj.CoreCompileInputs.cache
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.dll
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\refint\SistemaMaestra.dll
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.pdb
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.genruntimeconfig.cache
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\ref\SistemaMaestra.dll
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.FrmDatosCurso.resources
+C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.FrmMenuPrincipal.resources
