@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemaMaestra
-build_property.ProjectDir = C:\Users\leopa\source\repos\SistemaMaestra\SistemaMaestra\
+build_property.ProjectDir = C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

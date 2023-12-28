@@ -5,6 +5,8 @@ namespace SistemaMaestra
         public FrmMenuPrincipal()
         {
             InitializeComponent();
+            ConexionBD conBd = new ConexionBD();
+            conBd.establecerConexion();
         }
 
         private void Form1_Load(object sender, EventArgs e)

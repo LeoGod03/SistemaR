@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leopa\\source\\repos\\SistemaMaestra\\SistemaMaestra\\SistemaMaestra.csproj": {}
+    "C:\\Users\\leopa\\Documents\\SistemaR\\SistemaMaestra\\SistemaMaestra\\SistemaMaestra.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leopa\\source\\repos\\SistemaMaestra\\SistemaMaestra\\SistemaMaestra.csproj": {
+    "C:\\Users\\leopa\\Documents\\SistemaR\\SistemaMaestra\\SistemaMaestra\\SistemaMaestra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leopa\\source\\repos\\SistemaMaestra\\SistemaMaestra\\SistemaMaestra.csproj",
+        "projectUniqueName": "C:\\Users\\leopa\\Documents\\SistemaR\\SistemaMaestra\\SistemaMaestra\\SistemaMaestra.csproj",
         "projectName": "SistemaMaestra",
-        "projectPath": "C:\\Users\\leopa\\source\\repos\\SistemaMaestra\\SistemaMaestra\\SistemaMaestra.csproj",
+        "projectPath": "C:\\Users\\leopa\\Documents\\SistemaR\\SistemaMaestra\\SistemaMaestra\\SistemaMaestra.csproj",
         "packagesPath": "C:\\Users\\leopa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leopa\\source\\repos\\SistemaMaestra\\SistemaMaestra\\obj\\",
+        "outputPath": "C:\\Users\\leopa\\Documents\\SistemaR\\SistemaMaestra\\SistemaMaestra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leopa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
