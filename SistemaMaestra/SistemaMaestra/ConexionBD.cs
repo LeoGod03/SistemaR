@@ -24,18 +24,30 @@ namespace SistemaMaestra
                              ";Initial Catalog =" + bd + ";Persist Security Info = false";
         }
 
-        public SqlConnection establecerConexion()
+        public SqlConnection EstablecerConexion()
         {
             try
             {
                 conexion.ConnectionString = cadenaConexion;
                 conexion.Open();
-                MessageBox.Show("Se establecio conexion con la base de datos");
+               // MessageBox.Show("Se establecio conexion con la base de datos");
             }catch (Exception e)
             {
                 MessageBox.Show("Error al conectar a la base: "+e.Message,"Error");
             }
             return conexion;
+        }
+
+        public void CerrarConexion()
+        {
+            try
+            {
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al cerrar la conexión");
+            }
         }
     }
 }

@@ -41,3 +41,4 @@ C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0
 C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.pdb
 C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.genruntimeconfig.cache
 C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\ref\SistemaMaestra.dll
+C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.FrmCurso.resources

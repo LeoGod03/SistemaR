@@ -68,6 +68,7 @@
             btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FrmDatosCurso
             // 
@@ -80,6 +81,7 @@
             Controls.Add(lblNombreCurso);
             Name = "FrmDatosCurso";
             Text = "FrmDatosCurso";
+            FormClosing += FrmDatosCurso_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

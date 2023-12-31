@@ -10,11 +10,12 @@ namespace SistemaMaestra
     {
         private String nombre;
         private int numeroAlumnos;
-
-        public Curso(String nombre)
+        private int tareas;
+        public Curso(String nombre, int numeroAlumnos)
         {
             Nombre = nombre;
-            NumeroAlumnos = 0;
+            NumeroAlumnos = numeroAlumnos;
+            Tareas = 0;
         }
         public int NumeroAlumnos
         {
@@ -30,6 +31,17 @@ namespace SistemaMaestra
             set
             {
                 if (value != "") nombre = value;
+            }
+        }
+        public int Tareas
+        {
+            get { return tareas; }
+            set 
+            {
+                if (value >= 0) 
+                    tareas = value;
+                else
+                    tareas = 0;
             }
         }
     }
