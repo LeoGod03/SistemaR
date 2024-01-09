@@ -32,11 +32,12 @@
             btnEliminarCurso = new Button();
             btnCrearCurso = new Button();
             tblCursos = new DataGridView();
-            cursos = new DataGridViewTextBoxColumn();
-            alumnos = new DataGridViewTextBoxColumn();
             splitContainer1 = new SplitContainer();
             btnBuscar = new Button();
             txtBusqueda = new TextBox();
+            cursos = new DataGridViewTextBoxColumn();
+            alumnos = new DataGridViewTextBoxColumn();
+            tareas = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)tblCursos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -83,31 +84,14 @@
             tblCursos.AllowUserToDeleteRows = false;
             tblCursos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             tblCursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tblCursos.Columns.AddRange(new DataGridViewColumn[] { cursos, alumnos });
+            tblCursos.Columns.AddRange(new DataGridViewColumn[] { cursos, alumnos, tareas });
             tblCursos.Dock = DockStyle.Fill;
             tblCursos.Location = new Point(0, 0);
             tblCursos.Name = "tblCursos";
-            tblCursos.ReadOnly = true;
             tblCursos.RowHeadersWidth = 62;
             tblCursos.Size = new Size(835, 664);
             tblCursos.TabIndex = 0;
             tblCursos.CellDoubleClick += tblCursos_CellDoubleClick;
-            // 
-            // cursos
-            // 
-            cursos.HeaderText = "Nombre del curso";
-            cursos.MinimumWidth = 8;
-            cursos.Name = "cursos";
-            cursos.ReadOnly = true;
-            cursos.Width = 150;
-            // 
-            // alumnos
-            // 
-            alumnos.HeaderText = "#Alumnos";
-            alumnos.MinimumWidth = 8;
-            alumnos.Name = "alumnos";
-            alumnos.ReadOnly = true;
-            alumnos.Width = 150;
             // 
             // splitContainer1
             // 
@@ -148,6 +132,29 @@
             txtBusqueda.TabIndex = 5;
             txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
+            // cursos
+            // 
+            cursos.HeaderText = "Nombre del curso";
+            cursos.MinimumWidth = 8;
+            cursos.Name = "cursos";
+            cursos.ReadOnly = true;
+            cursos.Width = 150;
+            // 
+            // alumnos
+            // 
+            alumnos.HeaderText = "#Alumnos";
+            alumnos.MinimumWidth = 8;
+            alumnos.Name = "alumnos";
+            alumnos.ReadOnly = true;
+            alumnos.Width = 150;
+            // 
+            // tareas
+            // 
+            tareas.HeaderText = "#Tareas";
+            tareas.MinimumWidth = 8;
+            tareas.Name = "tareas";
+            tareas.Width = 150;
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -172,10 +179,11 @@
         private Button btnEliminarCurso;
         private Button btnModificarCurso;
         private DataGridView tblCursos;
-        private DataGridViewTextBoxColumn cursos;
-        private DataGridViewTextBoxColumn alumnos;
         private SplitContainer splitContainer1;
         private Button btnBuscar;
         private TextBox txtBusqueda;
+        private DataGridViewTextBoxColumn cursos;
+        private DataGridViewTextBoxColumn alumnos;
+        private DataGridViewTextBoxColumn tareas;
     }
 }

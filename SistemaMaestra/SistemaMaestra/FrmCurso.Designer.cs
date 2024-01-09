@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            txtBusqueda = new TextBox();
             lblBusquedaTexto = new Label();
             cBoxTipoBusqueda = new ComboBox();
             btnBusvar = new Button();
             tblAlumnos = new DataGridView();
             splitContainer1 = new SplitContainer();
+            lblTareas = new Label();
             btnEliminar = new Button();
             btnModificar = new Button();
             btnAgregar = new Button();
@@ -46,12 +47,13 @@
             splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // txtBusqueda
             // 
-            textBox1.Location = new Point(368, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(490, 31);
-            textBox1.TabIndex = 0;
+            txtBusqueda.Location = new Point(368, 31);
+            txtBusqueda.Name = "txtBusqueda";
+            txtBusqueda.Size = new Size(490, 31);
+            txtBusqueda.TabIndex = 0;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
             // lblBusquedaTexto
             // 
@@ -66,7 +68,7 @@
             // 
             cBoxTipoBusqueda.Cursor = Cursors.Hand;
             cBoxTipoBusqueda.FormattingEnabled = true;
-            cBoxTipoBusqueda.Items.AddRange(new object[] { "Matricula", "Nombre", "Calificacion" });
+            cBoxTipoBusqueda.Items.AddRange(new object[] { "Matricula", "Nombre" });
             cBoxTipoBusqueda.Location = new Point(167, 29);
             cBoxTipoBusqueda.Name = "cBoxTipoBusqueda";
             cBoxTipoBusqueda.Size = new Size(182, 33);
@@ -89,10 +91,11 @@
             tblAlumnos.Dock = DockStyle.Fill;
             tblAlumnos.Location = new Point(0, 0);
             tblAlumnos.Name = "tblAlumnos";
-            tblAlumnos.ReadOnly = true;
             tblAlumnos.RowHeadersWidth = 62;
             tblAlumnos.Size = new Size(1258, 489);
             tblAlumnos.TabIndex = 4;
+            tblAlumnos.CellBeginEdit += tblAlumnos_CellBeginEdit;
+            tblAlumnos.CellEndEdit += tblAlumnos_CellEndEdit;
             // 
             // splitContainer1
             // 
@@ -103,6 +106,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(lblTareas);
             splitContainer1.Panel1.Controls.Add(btnEliminar);
             splitContainer1.Panel1.Controls.Add(btnModificar);
             splitContainer1.Panel1.Controls.Add(btnAgregar);
@@ -110,7 +114,7 @@
             splitContainer1.Panel1.Controls.Add(lblNombreCurso);
             splitContainer1.Panel1.Controls.Add(lblBusquedaTexto);
             splitContainer1.Panel1.Controls.Add(btnBusvar);
-            splitContainer1.Panel1.Controls.Add(textBox1);
+            splitContainer1.Panel1.Controls.Add(txtBusqueda);
             splitContainer1.Panel1.Controls.Add(cBoxTipoBusqueda);
             // 
             // splitContainer1.Panel2
@@ -119,6 +123,15 @@
             splitContainer1.Size = new Size(1258, 664);
             splitContainer1.SplitterDistance = 171;
             splitContainer1.TabIndex = 5;
+            // 
+            // lblTareas
+            // 
+            lblTareas.AutoSize = true;
+            lblTareas.Location = new Point(1106, 35);
+            lblTareas.Name = "lblTareas";
+            lblTareas.Size = new Size(64, 25);
+            lblTareas.TabIndex = 9;
+            lblTareas.Text = "Tareas:";
             // 
             // btnEliminar
             // 
@@ -129,6 +142,7 @@
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnModificar
             // 
@@ -139,6 +153,7 @@
             btnModificar.TabIndex = 7;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnAgregar
             // 
@@ -149,6 +164,7 @@
             btnAgregar.TabIndex = 6;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // cBoxElemento
             // 
@@ -158,6 +174,7 @@
             cBoxElemento.Name = "cBoxElemento";
             cBoxElemento.Size = new Size(182, 33);
             cBoxElemento.TabIndex = 5;
+            cBoxElemento.SelectedValueChanged += cBoxElemento_SelectedValueChanged;
             // 
             // lblNombreCurso
             // 
@@ -175,7 +192,7 @@
             ClientSize = new Size(1258, 664);
             Controls.Add(splitContainer1);
             Name = "FrmCurso";
-            Text = "FrmCurso";
+            Text = "Datos del curso";
             FormClosing += FrmCurso_FormClosing;
             ((System.ComponentModel.ISupportInitialize)tblAlumnos).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
@@ -188,7 +205,7 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtBusqueda;
         private Label lblBusquedaTexto;
         private ComboBox cBoxTipoBusqueda;
         private Button btnBusvar;
@@ -199,5 +216,6 @@
         private Button btnAgregar;
         private Button btnEliminar;
         private Button btnModificar;
+        private Label lblTareas;
     }
 }

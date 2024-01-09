@@ -32,6 +32,8 @@
             txtNombreCurso = new TextBox();
             btnAceptar = new Button();
             btnCancelar = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblNombreCurso
@@ -70,18 +72,29 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logoUACM;
+            pictureBox1.Location = new Point(457, 29);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(150, 150);
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
             // FrmDatosCurso
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(519, 254);
+            ClientSize = new Size(628, 254);
+            Controls.Add(pictureBox1);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(txtNombreCurso);
             Controls.Add(lblNombreCurso);
             Name = "FrmDatosCurso";
-            Text = "FrmDatosCurso";
+            Text = " Datos curso";
             FormClosing += FrmDatosCurso_FormClosing;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -92,5 +105,6 @@
         private TextBox txtNombreCurso;
         private Button btnAceptar;
         private Button btnCancelar;
+        private PictureBox pictureBox1;
     }
 }

@@ -5,7 +5,7 @@ namespace SistemaMaestra
     public partial class FrmMenuPrincipal : Form
     {
         private CursoDao cursoDao;
-        private List<Curso> listaCursos;
+        public List<Curso> listaCursos;
         public FrmMenuPrincipal()
         {
             cursoDao = new CursoDao();
@@ -13,8 +13,7 @@ namespace SistemaMaestra
             cursoDao.CrearTablaCursos();
             listaCursos = cursoDao.ObtenerTablaCursos();
             LlenarTabla(listaCursos);
-            btnModificarCurso.Enabled = listaCursos.Count > 0;
-            btnEliminarCurso.Enabled = listaCursos.Count > 0;
+           
 
         }
 
@@ -31,6 +30,7 @@ namespace SistemaMaestra
             int numeroFila = tblCursos.Rows.Add();
             tblCursos.Rows[numeroFila].Cells[0].Value = curso.Nombre;
             tblCursos.Rows[numeroFila].Cells[1].Value = curso.NumeroAlumnos;
+            tblCursos.Rows[numeroFila].Cells[2].Value = curso.Tareas;
             btnModificarCurso.Enabled = true;
             btnEliminarCurso.Enabled = true;
         }
@@ -40,10 +40,11 @@ namespace SistemaMaestra
         {
 
             Curso curso = new Curso((String)tblCursos.Rows[tblCursos.SelectedCells[0].RowIndex].Cells[0].Value, (int)tblCursos.Rows[tblCursos.SelectedCells[0].RowIndex].Cells[1].Value);
+            curso.Tareas = (int) tblCursos.Rows[tblCursos.SelectedCells[0].RowIndex].Cells[2].Value;
             FrmCurso interfazCurso = new FrmCurso(curso, this);
             interfazCurso.Visible = true;
             Hide();
-            //MessageBox.Show($"Curso: {tblCursos.Rows[tblCursos.SelectedCells[0].RowIndex].Cells[0].Value}");
+            //MessageBox.Show($"Curso: {tblCursos.Rows[tblCursos.SelectedCells[0].RowIndex].Cells[2].Value}");
         }
 
         private void btnModificarCurso_MouseClick(object sender, MouseEventArgs e)
@@ -56,6 +57,8 @@ namespace SistemaMaestra
         }
         public void LlenarTabla(List<Curso> lista)
         {
+            btnModificarCurso.Enabled = listaCursos.Count > 0;
+            btnEliminarCurso.Enabled = listaCursos.Count > 0;
             tblCursos.Rows.Clear();
             int numeroFila;
             foreach (Curso curso in lista)
@@ -63,6 +66,7 @@ namespace SistemaMaestra
                 numeroFila = tblCursos.Rows.Add();
                 tblCursos.Rows[numeroFila].Cells[0].Value = curso.Nombre;
                 tblCursos.Rows[numeroFila].Cells[1].Value = curso.NumeroAlumnos;
+                tblCursos.Rows[numeroFila].Cells[2].Value = curso.Tareas;
             }
         }
 

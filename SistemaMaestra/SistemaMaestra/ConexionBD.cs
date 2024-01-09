@@ -47,6 +47,7 @@ namespace SistemaMaestra
             catch (Exception e)
             {
                 MessageBox.Show("Error al cerrar la conexión");
+                Console.WriteLine(e.Message);
             }
         }
     }

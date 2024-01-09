@@ -42,3 +42,7 @@ C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0
 C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.genruntimeconfig.cache
 C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\ref\SistemaMaestra.dll
 C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.FrmCurso.resources
+C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.FrmDatosAlumno.resources
+C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.Properties.Resources.resources
+C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.FrmDatosTarea.resources
+C:\Users\leopa\Documents\SistemaR\SistemaMaestra\SistemaMaestra\obj\Debug\net8.0-windows\SistemaMaestra.FrmListaTareas.resources

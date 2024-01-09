@@ -14,7 +14,7 @@ namespace SistemaMaestra
     {
         private FrmMenuPrincipal principal;
         private bool editar = false;
-        private Curso curso;
+        private Curso? curso;
         public FrmDatosCurso(FrmMenuPrincipal menuPrincipal, Curso curso)
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace SistemaMaestra
             if (editar)
             {
                 this.curso = curso;
-                txtNombreCurso.Text = curso.Nombre;
+                txtNombreCurso.Text = curso!.Nombre;
             }
 
 
@@ -33,26 +33,49 @@ namespace SistemaMaestra
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Curso cursoNuevo;
-            if (!editar)
+            if(txtNombreCurso.Text != "")
             {
-                cursoNuevo = new Curso(txtNombreCurso.Text, 0);
-                principal.AgregarCursoTabla(cursoNuevo);
+                if (!editar)
+                {
+                    if(! new CursoDao().ExisteCurso(new Curso(txtNombreCurso.Text,0)))
+                    {
+                        new CursoDao().AgregarCurso(new Curso(txtNombreCurso.Text, 0));
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("¡Curso ya existente, elige otro!", "Datos existentes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    String nombreViejo = curso!.Nombre;
+                     curso.Nombre = txtNombreCurso.Text;
+                    if (nombreViejo == curso.Nombre)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        if (!new CursoDao().ExisteCurso(new Curso(txtNombreCurso.Text, 0)))
+                        {
+                            new CursoDao().ActualizarCurso(curso, nombreViejo);
+                            this.Close();
+                        }
+                        else
+                            MessageBox.Show("¡Curso ya existente, elige otro!", "Datos existentes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
-            {
-                String nombreViejo = curso.Nombre;
-                curso.Nombre = txtNombreCurso.Text;
-                new CursoDao().ActualizarCurso(curso, nombreViejo);
-            }
-            List<Curso> listaCursos = new CursoDao().ObtenerTablaCursos();
-            principal.LlenarTabla(listaCursos);
-            principal.Show();
-            this.Close();
+                MessageBox.Show("¡Datos incompletos!, revisa por favor", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            
         }
 
         private void FrmDatosCurso_FormClosing(object sender, FormClosingEventArgs e)
         {
+            List<Curso> listaCursos = new CursoDao().ObtenerTablaCursos();
+            principal.LlenarTabla(listaCursos);
             principal.Show();
         }
 
