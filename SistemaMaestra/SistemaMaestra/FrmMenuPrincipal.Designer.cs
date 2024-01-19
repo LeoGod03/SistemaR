@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             btnModificarCurso = new Button();
             btnEliminarCurso = new Button();
             btnCrearCurso = new Button();
             tblCursos = new DataGridView();
-            splitContainer1 = new SplitContainer();
-            btnBuscar = new Button();
-            txtBusqueda = new TextBox();
             cursos = new DataGridViewTextBoxColumn();
             alumnos = new DataGridViewTextBoxColumn();
             tareas = new DataGridViewTextBoxColumn();
+            splitContainer1 = new SplitContainer();
+            txtBusqueda = new TextBox();
+            lblBusqueda = new Label();
             ((System.ComponentModel.ISupportInitialize)tblCursos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -93,45 +94,6 @@
             tblCursos.TabIndex = 0;
             tblCursos.CellDoubleClick += tblCursos_CellDoubleClick;
             // 
-            // splitContainer1
-            // 
-            splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            splitContainer1.Panel1.AutoScroll = true;
-            splitContainer1.Panel1.Controls.Add(btnBuscar);
-            splitContainer1.Panel1.Controls.Add(txtBusqueda);
-            splitContainer1.Panel1.Controls.Add(btnCrearCurso);
-            splitContainer1.Panel1.Controls.Add(btnEliminarCurso);
-            splitContainer1.Panel1.Controls.Add(btnModificarCurso);
-            // 
-            // splitContainer1.Panel2
-            // 
-            splitContainer1.Panel2.Controls.Add(tblCursos);
-            splitContainer1.Size = new Size(1258, 664);
-            splitContainer1.SplitterDistance = 419;
-            splitContainer1.TabIndex = 5;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Location = new Point(290, 33);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(112, 34);
-            btnBuscar.TabIndex = 6;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // txtBusqueda
-            // 
-            txtBusqueda.Location = new Point(16, 36);
-            txtBusqueda.Name = "txtBusqueda";
-            txtBusqueda.Size = new Size(255, 31);
-            txtBusqueda.TabIndex = 5;
-            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
-            // 
             // cursos
             // 
             cursos.HeaderText = "Nombre del curso";
@@ -155,6 +117,45 @@
             tareas.Name = "tareas";
             tareas.Width = 150;
             // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.AutoScroll = true;
+            splitContainer1.Panel1.Controls.Add(lblBusqueda);
+            splitContainer1.Panel1.Controls.Add(txtBusqueda);
+            splitContainer1.Panel1.Controls.Add(btnCrearCurso);
+            splitContainer1.Panel1.Controls.Add(btnEliminarCurso);
+            splitContainer1.Panel1.Controls.Add(btnModificarCurso);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(tblCursos);
+            splitContainer1.Size = new Size(1258, 664);
+            splitContainer1.SplitterDistance = 419;
+            splitContainer1.TabIndex = 5;
+            // 
+            // txtBusqueda
+            // 
+            txtBusqueda.Location = new Point(100, 38);
+            txtBusqueda.Name = "txtBusqueda";
+            txtBusqueda.Size = new Size(222, 31);
+            txtBusqueda.TabIndex = 5;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
+            // 
+            // lblBusqueda
+            // 
+            lblBusqueda.AutoSize = true;
+            lblBusqueda.Location = new Point(29, 38);
+            lblBusqueda.Name = "lblBusqueda";
+            lblBusqueda.Size = new Size(67, 25);
+            lblBusqueda.TabIndex = 6;
+            lblBusqueda.Text = "Buscar:";
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -163,6 +164,7 @@
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1258, 664);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMenuPrincipal";
             Text = "Sistema";
             ((System.ComponentModel.ISupportInitialize)tblCursos).EndInit();
@@ -180,10 +182,10 @@
         private Button btnModificarCurso;
         private DataGridView tblCursos;
         private SplitContainer splitContainer1;
-        private Button btnBuscar;
         private TextBox txtBusqueda;
         private DataGridViewTextBoxColumn cursos;
         private DataGridViewTextBoxColumn alumnos;
         private DataGridViewTextBoxColumn tareas;
+        private Label lblBusqueda;
     }
 }

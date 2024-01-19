@@ -111,7 +111,7 @@ namespace SistemaMaestra
             try
             {
                 comando = new SqlCommand(query, conexion);
-                comando.Parameters.AddWithValue("@Nombre", curso.Nombre);
+                comando.Parameters.AddWithValue("@Nombre", Texto.NombreTablas(curso.Nombre));
                 lector = comando.ExecuteReader();
                 while (lector.Read())
                 {

@@ -20,7 +20,7 @@ namespace SistemaMaestra
                 palabra = char.ToUpper(palabra[0]) + palabra.Substring(1);
                 cadenaResultado += palabra;
             }
-            return cadenaResultado;
+            return cadenaResultado.Trim();
         }
         public static String NombreColumnasABD(String cadena) 
         {
@@ -39,7 +39,7 @@ namespace SistemaMaestra
                
             }
 
-            return cadenaResultado.Substring(0,cadenaResultado.Length-1);
+            return cadenaResultado.Substring(0,cadenaResultado.Length-1).Trim();
         }
 
         public static String NombreColumnasDBD(String cadena)
@@ -56,7 +56,7 @@ namespace SistemaMaestra
               
             }
 
-            return cadenaResultado.TrimEnd();
+            return cadenaResultado.Trim();
         }
     }
 }

@@ -26,11 +26,16 @@ namespace SistemaMaestra
             editar = alumno != null;
             if (editar)
             {
-                matriculaAntigua = this.alumno.Matricula;
-                txtMatricula.Text = matriculaAntigua;
-                txtNombre.Text = this.alumno.Nombre;
-                txtApaterno.Text = this.alumno.ApellidoP;
-                txtAmaterno.Text = this.alumno.ApellidoM;
+                List<Alumno> list = alumnoDao.BuscarAlumno(cursoInterfaz.curso,new Alumno("",alumno!.Matricula,"",""),"Matricula");
+                if (list.Count == 1)
+                {
+                    this.alumno = list[0];
+                    matriculaAntigua = this.alumno.Matricula;
+                    txtMatricula.Text = matriculaAntigua;
+                    txtNombre.Text = this.alumno.Nombre;
+                    txtApaterno.Text = this.alumno.ApellidoP;
+                    txtAmaterno.Text = this.alumno.ApellidoM;
+                }
 
             }
         }
@@ -65,7 +70,7 @@ namespace SistemaMaestra
             {
                 if (Alumno.ValidarMatricula(txtMatricula.Text))
                 {
-                    Alumno alumno = new Alumno(txtMatricula.Text, txtNombre.Text, txtApaterno.Text, txtAmaterno.Text);
+                    Alumno alumno = new Alumno(txtMatricula.Text.Trim(), txtNombre.Text.Trim(), txtApaterno.Text.Trim(), txtAmaterno.Text.Trim());
                     if (!editar)
                     {
                         if(!new AlumnoDao().ExisteAlumno(cursoInterfaz.curso,new Alumno(txtMatricula.Text, "", "", "")))

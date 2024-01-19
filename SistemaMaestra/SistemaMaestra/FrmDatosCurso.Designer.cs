@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDatosCurso));
             lblNombreCurso = new Label();
             txtNombreCurso = new TextBox();
             btnAceptar = new Button();
@@ -54,9 +55,10 @@
             // 
             // btnAceptar
             // 
+            btnAceptar.Cursor = Cursors.Hand;
             btnAceptar.Location = new Point(28, 163);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(112, 34);
+            btnAceptar.Size = new Size(112, 50);
             btnAceptar.TabIndex = 2;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.Location = new Point(282, 163);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(112, 34);
+            btnCancelar.Size = new Size(112, 50);
             btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -91,6 +94,7 @@
             Controls.Add(btnAceptar);
             Controls.Add(txtNombreCurso);
             Controls.Add(lblNombreCurso);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmDatosCurso";
             Text = " Datos curso";
             FormClosing += FrmDatosCurso_FormClosing;

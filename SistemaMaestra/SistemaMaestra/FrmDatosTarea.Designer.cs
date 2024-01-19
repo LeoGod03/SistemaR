@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDatosTarea));
             lblTarea = new Label();
             txtTarea = new TextBox();
             btnAceptar = new Button();
@@ -54,6 +55,7 @@
             // 
             // btnAceptar
             // 
+            btnAceptar.Cursor = Cursors.Hand;
             btnAceptar.Location = new Point(35, 229);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(112, 45);
@@ -64,6 +66,7 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.Location = new Point(293, 229);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(112, 45);
@@ -91,6 +94,7 @@
             Controls.Add(btnAceptar);
             Controls.Add(txtTarea);
             Controls.Add(lblTarea);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmDatosTarea";
             Text = "FrmDatosTarea";
             FormClosing += FrmDatosTarea_FormClosing;

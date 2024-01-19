@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace SistemaMaestra
 {
     public partial class FrmListaTareas : Form
@@ -33,7 +32,7 @@ namespace SistemaMaestra
             nombreViejo = (String)tblTareas.Rows[0].Cells[1].Value;
 
             if (editar)
-                txtTarea.Text = nombreViejo;
+                txtTarea.Text = nombreViejo.Trim();
             else
             {
                 txtTarea.Enabled = false;
@@ -63,7 +62,7 @@ namespace SistemaMaestra
             nombreViejo = (String)tblTareas.Rows[tblTareas.SelectedCells[0].RowIndex].Cells[1].Value;
 
             if (editar)
-                txtTarea.Text = nombreViejo;
+                txtTarea.Text = nombreViejo.Trim();
 
         }
 
@@ -75,9 +74,9 @@ namespace SistemaMaestra
                 {
                     if (txtTarea.Text != "")
                     {
-                        if(!new TareaDao().ExisteTarea(cursoInterfaz.curso,txtTarea.Text))
+                        if(!new TareaDao().ExisteTarea(cursoInterfaz.curso,txtTarea.Text.Trim()))
                         {
-                            new TareaDao().ModificarTarea(cursoInterfaz.curso, txtTarea.Text, nombreViejo!);
+                            new TareaDao().ModificarTarea(cursoInterfaz.curso, txtTarea.Text.Trim(), nombreViejo!.Trim());
                             this.Close();
                            
                         }                            

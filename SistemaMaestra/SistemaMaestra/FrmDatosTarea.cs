@@ -27,9 +27,9 @@ namespace SistemaMaestra
         {
             if (txtTarea.Text != "")
             {
-                if(!new TareaDao().ExisteTarea(cursoInterfaz!.curso, txtTarea.Text))
+                if(!new TareaDao().ExisteTarea(cursoInterfaz!.curso, txtTarea.Text.Trim()))
                 {
-                    tareaDao.AgregarTarea(cursoInterfaz!.curso, txtTarea.Text);
+                    tareaDao.AgregarTarea(cursoInterfaz!.curso, txtTarea.Text.Trim());
                     this.Close();
                 }else
                     MessageBox.Show("¡Tarea ya existente, elige otra!", "Datos existentes", MessageBoxButtons.OK, MessageBoxIcon.Error);

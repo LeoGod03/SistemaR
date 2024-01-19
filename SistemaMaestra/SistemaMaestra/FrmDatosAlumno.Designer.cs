@@ -46,7 +46,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(21, 116);
+            lblNombre.Location = new Point(88, 234);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(82, 25);
             lblNombre.TabIndex = 0;
@@ -54,15 +54,15 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(109, 116);
+            txtNombre.Location = new Point(176, 234);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(189, 31);
-            txtNombre.TabIndex = 1;
+            txtNombre.Size = new Size(224, 31);
+            txtNombre.TabIndex = 3;
             // 
             // lblMatricula
             // 
             lblMatricula.AutoSize = true;
-            lblMatricula.Location = new Point(21, 60);
+            lblMatricula.Location = new Point(82, 50);
             lblMatricula.Name = "lblMatricula";
             lblMatricula.Size = new Size(88, 25);
             lblMatricula.TabIndex = 2;
@@ -70,22 +70,22 @@
             // 
             // txtMatricula
             // 
-            txtMatricula.Location = new Point(119, 57);
+            txtMatricula.Location = new Point(180, 47);
             txtMatricula.Name = "txtMatricula";
             txtMatricula.Size = new Size(179, 31);
             txtMatricula.TabIndex = 0;
             // 
             // txtApaterno
             // 
-            txtApaterno.Location = new Point(174, 172);
+            txtApaterno.Location = new Point(174, 103);
             txtApaterno.Name = "txtApaterno";
             txtApaterno.Size = new Size(226, 31);
-            txtApaterno.TabIndex = 2;
+            txtApaterno.TabIndex = 1;
             // 
             // lblApaterno
             // 
             lblApaterno.AutoSize = true;
-            lblApaterno.Location = new Point(21, 175);
+            lblApaterno.Location = new Point(21, 106);
             lblApaterno.Name = "lblApaterno";
             lblApaterno.Size = new Size(149, 25);
             lblApaterno.TabIndex = 5;
@@ -94,7 +94,7 @@
             // lblAmaterno
             // 
             lblAmaterno.AutoSize = true;
-            lblAmaterno.Location = new Point(21, 236);
+            lblAmaterno.Location = new Point(12, 167);
             lblAmaterno.Name = "lblAmaterno";
             lblAmaterno.Size = new Size(154, 25);
             lblAmaterno.TabIndex = 6;
@@ -111,13 +111,14 @@
             // 
             // txtAmaterno
             // 
-            txtAmaterno.Location = new Point(174, 233);
+            txtAmaterno.Location = new Point(174, 164);
             txtAmaterno.Name = "txtAmaterno";
             txtAmaterno.Size = new Size(226, 31);
-            txtAmaterno.TabIndex = 3;
+            txtAmaterno.TabIndex = 2;
             // 
             // btnAceptar
             // 
+            btnAceptar.Cursor = Cursors.Hand;
             btnAceptar.Location = new Point(63, 336);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(112, 47);
@@ -128,6 +129,7 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.Location = new Point(405, 336);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(112, 47);
@@ -152,6 +154,7 @@
             Controls.Add(lblMatricula);
             Controls.Add(txtNombre);
             Controls.Add(lblNombre);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmDatosAlumno";
             Text = "Datos Alumno";
             FormClosing += FrmDatosAlumno_FormClosing;

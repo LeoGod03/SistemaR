@@ -24,7 +24,7 @@ namespace SistemaMaestra
             conexion = administrador.EstablecerConexion();
             List<Alumno> listaResultado = new List<Alumno>();
             query = $"SELECT * FROM {Texto.NombreTablas(curso.Nombre)} " +
-                    $"ORDER BY {Texto.NombreTablas(curso.Nombre)}.matricula DESC;";
+                    $"ORDER BY {Texto.NombreTablas(curso.Nombre)}.apellido_paterno ASC;";
             SqlDataReader lector;
             int contadorTareas;
             Alumno alumno;
@@ -169,10 +169,12 @@ namespace SistemaMaestra
             List<Alumno> listaResultado = new List<Alumno>();
             query = $"SELECT * FROM {Texto.NombreTablas(curso.Nombre)} WHERE ";
             if (busqueda == "Matricula")
-                query += $"matricula like @Valor;";
+                query += $"matricula like @Valor ";
 
             else
-                query += $"nombre + ' ' + apellido_paterno + ' ' + apellido_materno like @Valor;";
+                query += $"nombre + ' ' + apellido_paterno + ' ' + apellido_materno like @Valor ";
+
+            query += $"ORDER BY {Texto.NombreTablas(curso.Nombre)}.apellido_paterno ASC;";
 
             SqlDataReader lector;
             int contadorTareas;
@@ -276,6 +278,54 @@ namespace SistemaMaestra
             }
             administrador.CerrarConexion();
             return existe;
+        }
+
+        public List<Alumno> ObtenerAlumnosEspecificos(Curso curso, bool aprobados)
+        {
+            conexion = administrador.EstablecerConexion();
+            List<Alumno> listaResultado = new List<Alumno>();
+            query = $"SELECT * FROM {Texto.NombreTablas(curso.Nombre)} WHERE promedio";
+            if (aprobados)
+                query += " >= 7 ";
+            else
+                query += " < 7 ";
+
+                 query += $"ORDER BY {Texto.NombreTablas(curso.Nombre)}.apellido_paterno ASC;";
+
+            SqlDataReader lector;
+            int contadorTareas;
+            Alumno alumno;
+            try
+            {
+                comando = new SqlCommand(query, conexion);
+                lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+                    alumno = new Alumno(lector.GetString(0), lector.GetString(1),
+                                        lector.GetString(2), lector.GetString(3));
+
+                    contadorTareas = 0;
+                    while (contadorTareas < curso.Tareas)
+                    {
+                        if (!lector.IsDBNull(contadorTareas + DEFINIDAS))
+                            alumno.Tareas.Add((float)lector.GetDouble(contadorTareas + DEFINIDAS));
+                        else
+                            alumno.Tareas.Add(0);
+
+                        contadorTareas++;
+                    }
+
+
+                    listaResultado.Add(alumno);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"¡Error al obtener los datos solicitados del curso '{curso.Nombre}'!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(e.Message);
+            }
+            administrador.CerrarConexion();
+            return listaResultado;
         }
     }
 }

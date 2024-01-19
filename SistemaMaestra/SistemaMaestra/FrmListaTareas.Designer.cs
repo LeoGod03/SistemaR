@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListaTareas));
             splitContainer1 = new SplitContainer();
             tblTareas = new DataGridView();
             numeroTarea = new DataGridViewTextBoxColumn();
@@ -108,6 +109,7 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.Location = new Point(155, 311);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(112, 34);
@@ -118,6 +120,7 @@
             // 
             // btnAceptar
             // 
+            btnAceptar.Cursor = Cursors.Hand;
             btnAceptar.Location = new Point(13, 311);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(112, 34);
@@ -148,6 +151,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(742, 376);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmListaTareas";
             Text = "FrmListaTareas";
             FormClosing += FrmListaTareas_FormClosing;

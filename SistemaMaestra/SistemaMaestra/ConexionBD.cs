@@ -10,18 +10,46 @@ namespace SistemaMaestra
     {
         SqlConnection conexion = new SqlConnection();
 
-        private String servidor = "localhost";
-        private String bd = "SistemaMaestra";
-        private String usuario = "Leo";
-        private String password = "12345";
-        private String puerto = "51637";
-        private String cadenaConexion;
+        private String? servidor;
+        private String? bd;
+        private String? usuario;
+        private String? password;
+        private String? puerto;
+        private String? cadenaConexion;
 
-        public ConexionBD() 
+        public ConexionBD()
         {
-            cadenaConexion = "Data Source = "+ servidor + "," + puerto + 
-                             "; user id = " + usuario +";password = " + password + 
-                             ";Initial Catalog =" + bd + ";Persist Security Info = false";
+            string directorioDeLaAplicacion = AppDomain.CurrentDomain.BaseDirectory;
+            string filePath = Path.Combine(directorioDeLaAplicacion, "datos.txt");
+            List<String> datos = new List<String>();
+            try
+            {
+
+                using (StreamReader sr = new StreamReader(filePath))
+                { 
+                    string? line;
+                    while ((line = sr.ReadLine()) != null)
+                        datos.Add(line);
+
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Ocurrió un error: " + e.Message);
+            }
+            if (datos.Count == 5)
+            {
+                servidor = datos[0];
+                bd = datos[1];
+                usuario = datos[2];
+                password = datos[3];
+                puerto = datos[4];
+
+                cadenaConexion = "Data Source = " + servidor + "," + puerto +
+                                  "; user id = " + usuario + ";password = " + password +
+                                  ";Initial Catalog =" + bd + ";Persist Security Info = false";
+            }
         }
 
         public SqlConnection EstablecerConexion()

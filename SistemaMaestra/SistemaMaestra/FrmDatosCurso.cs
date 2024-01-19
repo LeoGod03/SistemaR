@@ -37,9 +37,9 @@ namespace SistemaMaestra
             {
                 if (!editar)
                 {
-                    if(! new CursoDao().ExisteCurso(new Curso(txtNombreCurso.Text,0)))
+                    if(! new CursoDao().ExisteCurso(new Curso(txtNombreCurso.Text.Trim(),0)))
                     {
-                        new CursoDao().AgregarCurso(new Curso(txtNombreCurso.Text, 0));
+                        new CursoDao().AgregarCurso(new Curso(txtNombreCurso.Text.Trim(), 0));
                         this.Close();
                     }
                     else
@@ -56,9 +56,9 @@ namespace SistemaMaestra
                     }
                     else
                     {
-                        if (!new CursoDao().ExisteCurso(new Curso(txtNombreCurso.Text, 0)))
+                        if (!new CursoDao().ExisteCurso(new Curso(txtNombreCurso.Text.Trim(), 0)))
                         {
-                            new CursoDao().ActualizarCurso(curso, nombreViejo);
+                            new CursoDao().ActualizarCurso(curso, nombreViejo.Trim());
                             this.Close();
                         }
                         else

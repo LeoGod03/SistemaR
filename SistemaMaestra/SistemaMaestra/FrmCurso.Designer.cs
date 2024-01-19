@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCurso));
             txtBusqueda = new TextBox();
             lblBusquedaTexto = new Label();
             cBoxTipoBusqueda = new ComboBox();
-            btnBusvar = new Button();
             tblAlumnos = new DataGridView();
             splitContainer1 = new SplitContainer();
+            lblAlumnos = new Label();
+            btnPdf = new Button();
+            cBoxCertificados = new ComboBox();
             lblTareas = new Label();
             btnEliminar = new Button();
             btnModificar = new Button();
@@ -74,15 +77,6 @@
             cBoxTipoBusqueda.Size = new Size(182, 33);
             cBoxTipoBusqueda.TabIndex = 2;
             // 
-            // btnBusvar
-            // 
-            btnBusvar.Location = new Point(876, 30);
-            btnBusvar.Name = "btnBusvar";
-            btnBusvar.Size = new Size(112, 34);
-            btnBusvar.TabIndex = 3;
-            btnBusvar.Text = "Buscar";
-            btnBusvar.UseVisualStyleBackColor = true;
-            // 
             // tblAlumnos
             // 
             tblAlumnos.AllowUserToAddRows = false;
@@ -95,6 +89,7 @@
             tblAlumnos.Size = new Size(1258, 489);
             tblAlumnos.TabIndex = 4;
             tblAlumnos.CellBeginEdit += tblAlumnos_CellBeginEdit;
+            tblAlumnos.CellClick += tblAlumnos_CellClick;
             tblAlumnos.CellEndEdit += tblAlumnos_CellEndEdit;
             // 
             // splitContainer1
@@ -106,6 +101,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(lblAlumnos);
+            splitContainer1.Panel1.Controls.Add(btnPdf);
+            splitContainer1.Panel1.Controls.Add(cBoxCertificados);
             splitContainer1.Panel1.Controls.Add(lblTareas);
             splitContainer1.Panel1.Controls.Add(btnEliminar);
             splitContainer1.Panel1.Controls.Add(btnModificar);
@@ -113,7 +111,6 @@
             splitContainer1.Panel1.Controls.Add(cBoxElemento);
             splitContainer1.Panel1.Controls.Add(lblNombreCurso);
             splitContainer1.Panel1.Controls.Add(lblBusquedaTexto);
-            splitContainer1.Panel1.Controls.Add(btnBusvar);
             splitContainer1.Panel1.Controls.Add(txtBusqueda);
             splitContainer1.Panel1.Controls.Add(cBoxTipoBusqueda);
             // 
@@ -124,10 +121,39 @@
             splitContainer1.SplitterDistance = 171;
             splitContainer1.TabIndex = 5;
             // 
+            // lblAlumnos
+            // 
+            lblAlumnos.AutoSize = true;
+            lblAlumnos.Location = new Point(21, 134);
+            lblAlumnos.Name = "lblAlumnos";
+            lblAlumnos.Size = new Size(83, 25);
+            lblAlumnos.TabIndex = 12;
+            lblAlumnos.Text = "Alumnos";
+            // 
+            // btnPdf
+            // 
+            btnPdf.Location = new Point(1118, 29);
+            btnPdf.Name = "btnPdf";
+            btnPdf.Size = new Size(74, 34);
+            btnPdf.TabIndex = 11;
+            btnPdf.Text = "PDF";
+            btnPdf.UseVisualStyleBackColor = true;
+            btnPdf.Click += btnPdf_Click;
+            // 
+            // cBoxCertificados
+            // 
+            cBoxCertificados.FormattingEnabled = true;
+            cBoxCertificados.Items.AddRange(new object[] { "Todos", "Aprobados", "No aprobados" });
+            cBoxCertificados.Location = new Point(1046, 114);
+            cBoxCertificados.Name = "cBoxCertificados";
+            cBoxCertificados.Size = new Size(182, 33);
+            cBoxCertificados.TabIndex = 10;
+            cBoxCertificados.SelectedValueChanged += cBoxCertificados_SelectedValueChanged;
+            // 
             // lblTareas
             // 
             lblTareas.AutoSize = true;
-            lblTareas.Location = new Point(1106, 35);
+            lblTareas.Location = new Point(928, 37);
             lblTareas.Name = "lblTareas";
             lblTareas.Size = new Size(64, 25);
             lblTareas.TabIndex = 9;
@@ -136,7 +162,7 @@
             // btnEliminar
             // 
             btnEliminar.Cursor = Cursors.Hand;
-            btnEliminar.Location = new Point(1007, 110);
+            btnEliminar.Location = new Point(880, 110);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 37);
             btnEliminar.TabIndex = 8;
@@ -147,7 +173,7 @@
             // btnModificar
             // 
             btnModificar.Cursor = Cursors.Hand;
-            btnModificar.Location = new Point(854, 109);
+            btnModificar.Location = new Point(727, 109);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(112, 37);
             btnModificar.TabIndex = 7;
@@ -158,7 +184,7 @@
             // btnAgregar
             // 
             btnAgregar.Cursor = Cursors.Hand;
-            btnAgregar.Location = new Point(702, 109);
+            btnAgregar.Location = new Point(575, 109);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(112, 37);
             btnAgregar.TabIndex = 6;
@@ -170,7 +196,7 @@
             // 
             cBoxElemento.FormattingEnabled = true;
             cBoxElemento.Items.AddRange(new object[] { "Alumno", "Tarea" });
-            cBoxElemento.Location = new Point(495, 113);
+            cBoxElemento.Location = new Point(368, 113);
             cBoxElemento.Name = "cBoxElemento";
             cBoxElemento.Size = new Size(182, 33);
             cBoxElemento.TabIndex = 5;
@@ -179,7 +205,7 @@
             // lblNombreCurso
             // 
             lblNombreCurso.AutoSize = true;
-            lblNombreCurso.Location = new Point(10, 121);
+            lblNombreCurso.Location = new Point(21, 95);
             lblNombreCurso.Name = "lblNombreCurso";
             lblNombreCurso.Size = new Size(62, 25);
             lblNombreCurso.TabIndex = 4;
@@ -191,6 +217,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1258, 664);
             Controls.Add(splitContainer1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmCurso";
             Text = "Datos del curso";
             FormClosing += FrmCurso_FormClosing;
@@ -208,7 +235,6 @@
         private TextBox txtBusqueda;
         private Label lblBusquedaTexto;
         private ComboBox cBoxTipoBusqueda;
-        private Button btnBusvar;
         private DataGridView tblAlumnos;
         private SplitContainer splitContainer1;
         private Label lblNombreCurso;
@@ -217,5 +243,8 @@
         private Button btnEliminar;
         private Button btnModificar;
         private Label lblTareas;
+        private ComboBox cBoxCertificados;
+        private Button btnPdf;
+        private Label lblAlumnos;
     }
 }
